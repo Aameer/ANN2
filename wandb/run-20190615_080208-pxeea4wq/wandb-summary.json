@@ -1,0 +1,115 @@
+{
+    "graph": {
+        "_type": "graph",
+        "format": "keras",
+        "nodes": [
+            {
+                "name": "flatten_1_input",
+                "id": "flatten_1_input",
+                "class_name": "InputLayer",
+                "output_shape": [
+                    null,
+                    28,
+                    28
+                ],
+                "num_parameters": 0
+            },
+            {
+                "name": "flatten_1",
+                "id": "flatten_1",
+                "class_name": "Flatten",
+                "output_shape": [
+                    null,
+                    784
+                ],
+                "num_parameters": 0
+            },
+            {
+                "name": "dense_1",
+                "id": "dense_1",
+                "class_name": "Dense",
+                "output_shape": [
+                    null,
+                    100
+                ],
+                "num_parameters": 78500
+            },
+            {
+                "name": "dense_2",
+                "id": "dense_2",
+                "class_name": "Dense",
+                "output_shape": [
+                    null,
+                    10
+                ],
+                "num_parameters": 1010
+            }
+        ],
+        "edges": [
+            [
+                "flatten_1_input",
+                "flatten_1"
+            ],
+            [
+                "flatten_1",
+                "dense_1"
+            ],
+            [
+                "dense_1",
+                "dense_2"
+            ]
+        ]
+    },
+    "_runtime": 94.30856895446777,
+    "_step": 24,
+    "epoch": 24,
+    "examples": {
+        "width": 28,
+        "height": 28,
+        "count": 36,
+        "_type": "images",
+        "captions": [
+            1,
+            2,
+            5,
+            3,
+            6,
+            5,
+            7,
+            5,
+            6,
+            7,
+            5,
+            8,
+            5,
+            2,
+            3,
+            5,
+            5,
+            2,
+            2,
+            7,
+            3,
+            2,
+            5,
+            2,
+            6,
+            9,
+            8,
+            9,
+            5,
+            7,
+            6,
+            9,
+            8,
+            7,
+            7,
+            3
+        ]
+    },
+    "_timestamp": 1560585822.166968,
+    "val_acc": 0.8562,
+    "val_loss": 2.303771930885315,
+    "acc": 0.8541833333333333,
+    "loss": 2.33606147702535
+}

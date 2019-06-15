@@ -15,6 +15,7 @@ config.optimizer = "adam"
 config.epochs = 50
 config.dropout = 0.4
 config.hidden_nodes = 100
+config.batch_size=64
 
 # load data
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
@@ -38,12 +39,12 @@ model=Sequential()
 model.add(Flatten(input_shape=(img_width,img_height)))
 model.add(Dropout(config.dropout))
 model.add(Dense(config.hidden_nodes, activation='relu'))
-model.add(Dropout(config.dropout))
+#model.add(Dropout(config.dropout))
 model.add(Dense(num_classes, activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer=config.optimizer,
                     metrics=['accuracy'])
 
 
 # Fit the model
-model.fit(X_train, y_train, validation_data=(X_test, y_test),
+model.fit(X_train, y_train, validation_data=(X_test, y_test), batch_size=config.batch_size,
         epochs=config.epochs, callbacks=[WandbCallback(data_type="image", labels=labels)])
